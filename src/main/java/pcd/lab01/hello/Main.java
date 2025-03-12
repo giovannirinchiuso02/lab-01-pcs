@@ -7,13 +7,16 @@ public class Main {
 		log("Hello from the main thread");
 		
 		log("Number of processors: " + Runtime.getRuntime().availableProcessors());
+		//La classe Runtime dà informazioni generali sul Runtime, in questo caso
+		// ci dice il numero di processori disponibili.
 		
 		log("Launching new threads...");
 
-		var myThreadOne = new MyThread("ThreadOne");
-		myThreadOne.start();		
+		var myThreadOne = new MyThread("ThreadOne");  //creo il thread
+		myThreadOne.start();	//inizia a runnare ciò che c'è nel metodo run
 
 		var myThreadTwo = new Thread(new MyRunnable("ThreadTwo"));
+		//creo un oggetto Thread a cui passo questo task (classe Runnable)
 		myThreadTwo.start();		
 		
 		var t0 = System.currentTimeMillis();

@@ -25,6 +25,8 @@ public class SimpleClock extends Thread {
 	public void notifyStop() {
 		stopped = true;
 		interrupt();
+		//serve per svegliare thread, funziona solo se il thread è in attesa, se no non fa nulla
+		//utile quando si ha bisogno per terminare un altro thread, di svegliarne un altro che è in attesa
 	}
 	
 	private void waitAbit() {
